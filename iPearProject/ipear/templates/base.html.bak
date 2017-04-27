@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" content="width=device-width, initial-scale=1.0">
+	<title>{% block title %}% endblock %}</title>
+</head>
+<body>
+	<header>
+		<h1>Django Simple Login</h1>
+		{% if user.is_authenticated %}
+		    Hello {{ user.username }}!
+		    <a href="{% url 'logout' %}">logout</a>
+		{% else %}
+		    <a href="{% url 'login' %}">login</a>
+		{% endif %}
+	</header>
+	<hr>
+	<main>
+		{% block content %}
+		{% endblock %}
+	</main>
+	<hr>
+	<footer>
+		<a href="localhost">footer link</a>
+	</footer>
+</body>
+</html>

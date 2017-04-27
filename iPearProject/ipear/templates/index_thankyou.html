@@ -1,0 +1,46 @@
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+{% extends 'base.html' %}
+
+{% block title %}Account Created Successfully {% endblock %}
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>iPear Account Creation</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="keywords" content="iPear Account Creation" />
+<!--web-fonts-->
+<link href='//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
+<!--web-fonts-->
+
+
+{% block content %}
+</head>
+<body>
+		<h1 class="header">iPear</h1>
+
+		<!---main--->
+			<div class="main">
+				<div class="main-section agile">
+					<div class="login-form">
+                                            <h2>Thank You For Registering!</h2>
+                                            <h2><a href="{% url 'login' %}">Login</a></h3>
+					</div>
+				</div>
+			</div>
+			<div class="footer w3agile">
+			<p>&copy 2016 iPear. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+		</div>
+
+		<!---main--->
+</body>
+</html>
+
+{% endblock %}

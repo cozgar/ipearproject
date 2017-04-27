@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome {{user.first_name}}{% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+	<table style="width:100%", border=0>
+		<tr>
+			<td><h2>{{ user.first_name }} {{ user.last_name }}</h2></td>
+		</tr>
+		<tr>
+			<td>
+			<img src="https://familyguyaddicts.files.wordpress.com/2016/05/zeus.png" alt=" {{ user.username }} " style="height:300px">
+			</td>
+			<td><h2>Personal Information</h2>
+				<b>Username:</b> {{ user.username }} </br>
+				<b>First Name:</b> {{ user.first_name }} </br>
+				<b>Last Name:</b> {{user.last_name }} </br>
+				<b>Phone Number:</b> (912) 867-4872 </br>
+				<b>Email Address:</b> {{user.email}} </br>
+				<b>Age:</b> 76 </br>
+				<b>Gender:</b> Male </br>
+				</br>
+				<b>Allergies:</b> Peanuts, Dogs, Cats</br>
+				<b>Pre-Existing Conditions:</b> N/A </br>
+				<b>Firearms:</b> None </br>
+				<b>Household Pets:</b> 2 Dogs, 3 Cats</br>
+			</td>
+		</tr>
+		<tr>
+			<td><h2>Call History</h2>
+				{{ user.date_joined }}</br>
+				{{ user.last_login }}
+			
+			</td>
+			<td><h2>Dispatcher Notes</h2>
+				<p> Caller was panicked due to a feline being stuck in a tree. </p>
+
+			</td>
+		</tr>
+		<tr><td></td><td><input type="submit" value="Edit Profile"</td></tr>
+
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {% else %}
+	<h2>Welcome to iPear</h2>
+	<p>iPear is a mobile application that provides EMS with more accurate GPS and medical information from 911 calls.</p>
+	<p>You need to login to view this content. Please 
+	<a href="{% url 'login' %}">Login</a>.</br>Not a member? 
+	<a href="{% url 'signup' %}">Join Us</a>.
+    {% endif %}	
+{% endblock %}
